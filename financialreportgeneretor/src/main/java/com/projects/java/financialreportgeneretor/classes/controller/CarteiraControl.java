@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
-@RequestMapping(path = "api/v1/carteira")
+//@RestController
+//@RequestMapping(path = "api/v1/carteira")
 public class CarteiraControl {
     private final CarteiraService carteiraService;
 

@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
-@RequestMapping(path = "api/v1/operacao")
+//@RestController
+//@RequestMapping(path = "api/v1/operacao")
 public class OperacaoControl {
     private final OperacaoService operacaoService;
 
