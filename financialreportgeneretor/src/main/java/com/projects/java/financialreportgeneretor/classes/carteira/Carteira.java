@@ -1,12 +1,17 @@
 package com.projects.java.financialreportgeneretor.classes.carteira;
 
 import com.projects.java.financialreportgeneretor.classes.operacao.Operacao;
+import jakarta.persistence.*;
 
 import java.util.List;
 
+@Entity
 public class Carteira {
-    private long id;
+    @Id
+    @GeneratedValue
+    private Long id;
     private double saldo;
+    @OneToMany
     private List<Operacao> operacoes;
 
     public Carteira() {

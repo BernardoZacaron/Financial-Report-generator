@@ -1,11 +1,16 @@
 package com.projects.java.financialreportgeneretor.classes.operacao;
 
 import com.projects.java.financialreportgeneretor.classes.carteira.Carteira;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
+@Entity
 public class Operacao {
-    private long id;
+    @Id
+    @GeneratedValue
+    private Long id;
+    @ManyToOne
     private Carteira carteira;
     private LocalDate data;
     private double valor;

@@ -20,7 +20,7 @@ public class CarteiraControl {
     }
 
     @GetMapping
-    public Carteira getCarteira(){
-        return carteiraService.getCarteira();
+    public List<Carteira> getCarteiras(){
+        return carteiraService.getCarteiras();
     }
 }

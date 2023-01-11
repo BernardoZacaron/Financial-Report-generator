@@ -12,8 +12,8 @@ public class FinancialReportGeneretorApplication {
 		SpringApplication.run(FinancialReportGeneretorApplication.class, args);
 	}
 
-//	@GetMapping("/")
-//	public String teste(){
-//		return "rodando";
-//	}
+	@GetMapping("/")
+	public String teste(){
+		return "rodando";
+	}
 }
