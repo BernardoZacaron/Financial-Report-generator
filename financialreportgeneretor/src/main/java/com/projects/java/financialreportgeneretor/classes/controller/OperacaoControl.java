@@ -1,5 +1,7 @@
-package com.projects.java.financialreportgeneretor.classes.operacao;
+package com.projects.java.financialreportgeneretor.classes.controller;
 
+import com.projects.java.financialreportgeneretor.classes.model.Operacao;
+import com.projects.java.financialreportgeneretor.classes.service.OperacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

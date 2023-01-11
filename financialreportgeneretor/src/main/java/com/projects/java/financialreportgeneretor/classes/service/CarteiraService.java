@@ -1,7 +1,10 @@
-package com.projects.java.financialreportgeneretor.classes.carteira;
+package com.projects.java.financialreportgeneretor.classes.service;
 
+import com.projects.java.financialreportgeneretor.classes.model.Carteira;
+import com.projects.java.financialreportgeneretor.classes.repository.CarteiraRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -16,7 +19,11 @@ public class CarteiraService {
         this.carteiraRepo = carteiraRepo;
     }
 
-    public List<Carteira> getCarteiras(){
+    public List<Carteira> getAllCarteiras(){
         return carteiraRepo.findAll();
+    }
+
+    public void addCarteira(@RequestBody Carteira carteira) {
+        carteiraRepo.save(carteira);
     }
 }

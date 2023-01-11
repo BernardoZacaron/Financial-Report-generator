@@ -1,6 +1,6 @@
-package com.projects.java.financialreportgeneretor.classes.operacao;
+package com.projects.java.financialreportgeneretor.classes.model;
 
-import com.projects.java.financialreportgeneretor.classes.carteira.Carteira;
+import com.projects.java.financialreportgeneretor.classes.model.Carteira;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;

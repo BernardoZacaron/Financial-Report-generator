@@ -1,6 +1,5 @@
-package com.projects.java.financialreportgeneretor.classes.carteira;
+package com.projects.java.financialreportgeneretor.classes.model;
 
-import com.projects.java.financialreportgeneretor.classes.operacao.Operacao;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -19,6 +18,11 @@ public class Carteira {
 
     public Carteira(long id, double saldo, List<Operacao> operacoes) {
         this.id = id;
+        this.saldo = saldo;
+        this.operacoes = operacoes;
+    }
+
+    public Carteira(double saldo, List<Operacao> operacoes) {
         this.saldo = saldo;
         this.operacoes = operacoes;
     }

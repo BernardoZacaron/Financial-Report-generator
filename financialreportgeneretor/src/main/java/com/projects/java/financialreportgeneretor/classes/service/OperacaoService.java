@@ -1,7 +1,7 @@
-package com.projects.java.financialreportgeneretor.classes.operacao;
+package com.projects.java.financialreportgeneretor.classes.service;
 
-import com.projects.java.financialreportgeneretor.classes.carteira.Carteira;
-import org.springframework.stereotype.Component;
+import com.projects.java.financialreportgeneretor.classes.model.Carteira;
+import com.projects.java.financialreportgeneretor.classes.model.Operacao;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
