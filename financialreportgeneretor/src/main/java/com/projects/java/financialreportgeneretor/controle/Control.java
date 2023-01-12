@@ -1,13 +1,13 @@
-package com.projects.java.financialreportgeneretor.classes.controller;
+package com.projects.java.financialreportgeneretor.controle;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
+@RequestMapping("/")
 public class Control {
-    @RequestMapping("/")
+    @GetMapping({"/", "/home"})
     public String callHomePage() {
         return "index";
     }

@@ -1,4 +1,4 @@
-package com.projects.java.financialreportgeneretor.classes.model;
+package com.projects.java.financialreportgeneretor.model;
 
 import jakarta.persistence.*;
 

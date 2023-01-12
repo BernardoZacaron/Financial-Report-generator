@@ -1,7 +1,7 @@
-package com.projects.java.financialreportgeneretor.classes.service;
+package com.projects.java.financialreportgeneretor.service;
 
-import com.projects.java.financialreportgeneretor.classes.model.Carteira;
-import com.projects.java.financialreportgeneretor.classes.repository.CarteiraRepo;
+import com.projects.java.financialreportgeneretor.model.Carteira;
+import com.projects.java.financialreportgeneretor.repository.CarteiraRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,7 +1,7 @@
-package com.projects.java.financialreportgeneretor.classes.util;
+package com.projects.java.financialreportgeneretor.util;
 
-import com.projects.java.financialreportgeneretor.classes.model.Carteira;
-import com.projects.java.financialreportgeneretor.classes.repository.CarteiraRepo;
+import com.projects.java.financialreportgeneretor.model.Carteira;
+import com.projects.java.financialreportgeneretor.repository.CarteiraRepo;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
