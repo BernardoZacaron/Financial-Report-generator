@@ -54,4 +54,11 @@ public class Carteira {
                 ", saldo=" + saldo +
                 '}';
     }
+
+    public void atualizarSaldo(Operacao operacao){
+        if(operacao.isAcao())
+            setSaldo(getSaldo() + operacao.getValor());
+        if (!operacao.isAcao())
+            setSaldo(getSaldo() - operacao.getValor());
+    }
 }

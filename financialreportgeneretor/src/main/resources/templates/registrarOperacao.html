@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar</title>
+</head>
+<body>
+    <form th:action="@{/saveOperacao}" method="post" th:object="${novoOperacao}">
+        <label for="txtValor">Valor</label>
+        <input type="number" id="txtValor" required th:field="*{valor}">
+
+        <p>Ação:</p>
+        <input type="checkbox" id="checkDeposito" th:field="*{acao}">
+        <label for="checkDeposito">Deposito</label>
+        <br>
+        <button type="submit">Registrar</button>
+    </form>
+</body>
+</html>
+
+
+<!--<input type="radio" id="radioDeposito" name="radioAcao" value="1">
+        <label for="radioDeposito">Deposito</label>
+        <input type="radio" id="radioRetirada" name="radioAcao" value="0">
+        <label for="radioDeposito">Retirada</label>-->

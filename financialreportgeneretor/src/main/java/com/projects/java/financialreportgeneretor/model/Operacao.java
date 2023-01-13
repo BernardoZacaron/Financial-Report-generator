@@ -7,7 +7,8 @@ import java.time.LocalDate;
 @Entity
 public class Operacao {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO
+    )
     private Long id;
     @ManyToOne
     private Carteira carteira;
