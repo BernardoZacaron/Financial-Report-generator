@@ -29,7 +29,7 @@
         <tbody>
         <tr th:each="c: ${operacoes}">
             <td>
-                <span th:text='${c.data}'>00:00</span>
+                <span th:text='${c.dataHora}'>00:00</span>
             </td>
             <td>
                 R$<span th:text='${c.valor}'>00,0</span>0

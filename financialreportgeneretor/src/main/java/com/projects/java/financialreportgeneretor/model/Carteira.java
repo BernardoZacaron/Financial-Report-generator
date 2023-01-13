@@ -58,7 +58,7 @@ public class Carteira {
     public void atualizarSaldo(Operacao operacao){
         if(operacao.isAcao())
             setSaldo(getSaldo() + operacao.getValor());
-        if (!operacao.isAcao())
+        if(!operacao.isAcao())
             setSaldo(getSaldo() - operacao.getValor());
     }
 }

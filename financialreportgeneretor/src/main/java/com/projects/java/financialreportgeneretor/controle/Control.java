@@ -2,12 +2,19 @@ package com.projects.java.financialreportgeneretor.controle;
 
 import com.projects.java.financialreportgeneretor.model.Carteira;
 import com.projects.java.financialreportgeneretor.model.Operacao;
+import com.projects.java.financialreportgeneretor.model.dto.OperacaoDTO;
 import com.projects.java.financialreportgeneretor.repository.CarteiraRepo;
 import com.projects.java.financialreportgeneretor.repository.OperacaoRepo;
+import com.projects.java.financialreportgeneretor.util.DateFormatter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
@@ -18,13 +25,23 @@ public class Control {
     @Autowired
     CarteiraRepo carteiraRepo;
 
+    DateFormatter formatador = new DateFormatter();
+
     //Carteira carteiraMain = carteiraRepo.findAll().get(0);
 
     @GetMapping({"/", "/home"})
     public String callHomePage(Model model) {
         carteiraRepo.save(new Carteira(0));
         model.addAttribute("saldo", carteiraRepo.findAll().get(0).getSaldo());
-        model.addAttribute("operacoes", operacaoRepo.findAll());
+
+        List<OperacaoDTO> operacoes = new ArrayList<>();
+        for (Operacao op : operacaoRepo.findAll()) {
+            OperacaoDTO operacaoDTO = new OperacaoDTO(formatador.formatarData(op.getData()), op.getValor());
+
+            operacoes.add(operacaoDTO);
+        }
+
+        model.addAttribute("operacoes", operacoes);
         return "index";
     }
 
@@ -42,11 +59,10 @@ public class Control {
         else
             tipoAcao = false;
 
+        Operacao operacao = new Operacao(/*LocalDateTime.now()*/null, novoOperacao.getValor(), tipoAcao);
+        operacaoRepo.save(operacao);
 
-        Operacao op = new Operacao(null, novoOperacao.getValor(), tipoAcao);
-        operacaoRepo.save(novoOperacao);
-
-        carteiraRepo.findAll().get(0).atualizarSaldo(novoOperacao);
+        carteiraRepo.findAll().get(0).atualizarSaldo(operacao);
         carteiraRepo.saveAndFlush(carteiraRepo.findAll().get(0));
 
         return "redirect:/home";

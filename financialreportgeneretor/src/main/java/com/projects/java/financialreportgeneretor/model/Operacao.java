@@ -3,6 +3,7 @@ package com.projects.java.financialreportgeneretor.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 public class Operacao {
@@ -12,27 +13,27 @@ public class Operacao {
     private Long id;
     @ManyToOne
     private Carteira carteira;
-    private LocalDate data;
+    private LocalDateTime data;
     private double valor;
     private boolean acao; //0=retirada   1=deposito
 
     public Operacao() {
     }
 
-    public Operacao(Carteira carteira, LocalDate data, double valor, boolean acao) {
+    public Operacao(Carteira carteira, LocalDateTime data, double valor, boolean acao) {
         this.carteira = carteira;
         this.data = data;
         this.valor = valor;
         this.acao = acao;
     }
 
-    public Operacao(LocalDate data, double valor, boolean acao) {
+    public Operacao(LocalDate dataTime, double valor, boolean acao) {
         this.data = data;
         this.valor = valor;
         this.acao = acao;
     }
 
-    public Operacao(long id, Carteira carteira, LocalDate data, double valor, boolean acao) {
+    public Operacao(long id, Carteira carteira, LocalDateTime data, double valor, boolean acao) {
         this.id = id;
         this.carteira = carteira;
         this.data = data;
@@ -48,11 +49,11 @@ public class Operacao {
         this.id = id;
     }
 
-    public LocalDate getData() {
+    public LocalDateTime getData() {
         return data;
     }
 
-    public void setData(LocalDate data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
 
