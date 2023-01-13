@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">        <link href="estilo/splash.css" rel="stylesheet" type="text/css"/>
     <title>Registrar</title>
 </head>
 <body>
@@ -10,9 +12,18 @@
         <input type="number" id="txtValor" required th:field="*{valor}">
 
         <p>Ação:</p>
-        <input type="checkbox" id="checkDeposito" th:field="*{acao}">
-        <label for="checkDeposito">Deposito</label>
-        <br>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="radioAcao" id="radioDeposito" value="deposito" checked>
+            <label class="form-check-label" for="radioDeposito">
+                Depósito
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="radioAcao" id="radioRetirada" value="retirada">
+            <label class="form-check-label" for="radioRetirada">
+                Retirada
+            </label>
+        </div>
         <button type="submit">Registrar</button>
     </form>
 </body>

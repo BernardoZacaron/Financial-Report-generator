@@ -24,6 +24,7 @@ public class Control {
     public String callHomePage(Model model) {
         carteiraRepo.save(new Carteira(0));
         model.addAttribute("saldo", carteiraRepo.findAll().get(0).getSaldo());
+        model.addAttribute("operacoes", operacaoRepo.findAll());
         return "index";
     }
 
@@ -34,8 +35,15 @@ public class Control {
     }
 
     @PostMapping("/saveOperacao")
-    public String saveRegistro(@ModelAttribute Operacao novoOperacao){
-        Operacao op = new Operacao(null, novoOperacao.getValor(), novoOperacao.isAcao());
+    public String saveRegistro(@ModelAttribute Operacao novoOperacao, @RequestParam(name = "radioAcao") String acao){
+        boolean tipoAcao;
+        if(acao.equals("deposito"))
+            tipoAcao = true;
+        else
+            tipoAcao = false;
+
+
+        Operacao op = new Operacao(null, novoOperacao.getValor(), tipoAcao);
         operacaoRepo.save(novoOperacao);
 
         carteiraRepo.findAll().get(0).atualizarSaldo(novoOperacao);
