@@ -14,15 +14,16 @@ import org.springframework.web.bind.annotation.*;
 public class Control {
 
     @Autowired
-    private OperacaoRepo operacaoRepo;
+    OperacaoRepo operacaoRepo;
     @Autowired
-    private CarteiraRepo carteiraRepo;
+    CarteiraRepo carteiraRepo;
 
-    Carteira carteiraMain = carteiraRepo.findAll().get(0);
+    //Carteira carteiraMain = carteiraRepo.findAll().get(0);
 
     @GetMapping({"/", "/home"})
     public String callHomePage(Model model) {
-        model.addAttribute("saldo", carteiraMain.getSaldo());
+        carteiraRepo.save(new Carteira(0));
+        model.addAttribute("saldo", carteiraRepo.findAll().get(0).getSaldo());
         return "index";
     }
 
@@ -37,8 +38,8 @@ public class Control {
         Operacao op = new Operacao(null, novoOperacao.getValor(), novoOperacao.isAcao());
         operacaoRepo.save(novoOperacao);
 
-        carteiraMain.atualizarSaldo(novoOperacao);
-        carteiraRepo.saveAndFlush(carteiraMain);
+        carteiraRepo.findAll().get(0).atualizarSaldo(novoOperacao);
+        carteiraRepo.saveAndFlush(carteiraRepo.findAll().get(0));
 
         return "redirect:/home";
     }
