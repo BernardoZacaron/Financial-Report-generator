@@ -37,6 +37,7 @@ public class Control {
         List<OperacaoDTO> operacoes = new ArrayList<>();
         for (Operacao op : operacaoRepo.findAll()) {
             OperacaoDTO operacaoDTO = new OperacaoDTO(formatador.formatarData(op.getData()), op.getValor());
+            operacaoDTO.setAcao(op.isAcao());
 
             operacoes.add(operacaoDTO);
         }
@@ -59,7 +60,7 @@ public class Control {
         else
             tipoAcao = false;
 
-        Operacao operacao = new Operacao(/*LocalDateTime.now()*/null, novoOperacao.getValor(), tipoAcao);
+        Operacao operacao = new Operacao(LocalDateTime.now(), novoOperacao.getValor(), tipoAcao);
         operacaoRepo.save(operacao);
 
         carteiraRepo.findAll().get(0).atualizarSaldo(operacao);

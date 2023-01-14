@@ -27,7 +27,7 @@ public class Operacao {
         this.acao = acao;
     }
 
-    public Operacao(LocalDate dataTime, double valor, boolean acao) {
+    public Operacao(LocalDateTime data, double valor, boolean acao) {
         this.data = data;
         this.valor = valor;
         this.acao = acao;

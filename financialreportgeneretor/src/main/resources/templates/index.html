@@ -24,15 +24,20 @@
         <tr>
             <td>Data/hora</td>
             <td>Valor</td>
+            <td>Tipo</td>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="c: ${operacoes}">
+        <tr th:each="op: ${operacoes}">
             <td>
-                <span th:text='${c.dataHora}'>00:00</span>
+                <span th:text='${op.dataHora}'>00:00</span>
             </td>
             <td>
-                R$<span th:text='${c.valor}'>00,0</span>0
+                R$<span th:text='${op.valor}'>00,0</span>0
+            </td>
+            <td>
+                <span th:if="${op.acao == 'true'}">Depósito</span>
+                <span th:unless="${op.acao == 'true'}">Retirada</span>
             </td>
         </tr>
         </tbody>

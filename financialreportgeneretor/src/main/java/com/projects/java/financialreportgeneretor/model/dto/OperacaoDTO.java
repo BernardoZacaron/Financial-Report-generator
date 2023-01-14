@@ -6,10 +6,12 @@ import java.time.format.DateTimeFormatter;
 public class OperacaoDTO {
     private String dataHora;
     private double valor;
-    private boolean acao;
+    private String acao;
 
+    public OperacaoDTO() {
+    }
 
-    public OperacaoDTO(String dataHora, double valor, boolean acao) {
+    public OperacaoDTO(String dataHora, double valor, String acao) {
         this.dataHora = dataHora;
         this.valor = valor;
         this.acao = acao;
@@ -18,9 +20,6 @@ public class OperacaoDTO {
     public OperacaoDTO(String dataHora, double valor) {
         this.dataHora = dataHora;
         this.valor = valor;
-    }
-
-    public OperacaoDTO() {
     }
 
     public String getDataHora() {
@@ -39,10 +38,14 @@ public class OperacaoDTO {
         this.valor = valor;
     }
 
-    public String formatarData(LocalDate data){
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/uuuu HH:mm:ss");
-        String dataFormatada = data.format(formato);
+    public String getAcao() {
+        return acao;
+    }
 
-        return dataFormatada;
+    public void setAcao(Boolean acaoBool) {
+        if(acaoBool)
+            acao = "true";
+        else if (!acaoBool)
+            acao = "false";
     }
 }
