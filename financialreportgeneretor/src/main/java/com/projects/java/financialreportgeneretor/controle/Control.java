@@ -68,4 +68,13 @@ public class Control {
 
         return "redirect:/home";
     }
+
+    @PostMapping("/resetar")
+    public String resetarTudo(){
+        operacaoRepo.deleteAll();
+        carteiraRepo.findAll().get(0).setSaldo(0);
+        carteiraRepo.saveAndFlush(carteiraRepo.findAll().get(0));
+
+        return "redirect:/home";
+    }
 }
