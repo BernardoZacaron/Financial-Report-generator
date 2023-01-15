@@ -16,7 +16,7 @@ body{
     width: fit-content;
     border: 1px solid black;
     border-radius: 4%;
-    padding: 3%;
+    padding: 3% 3% 1%;
     
     background-image: linear-gradient(to bottom right, lightgreen, #f55347);
 }
@@ -24,6 +24,11 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+.img-situacao{
+    margin-left: 4px;
+    height: 65%;
+    vertical-align:middle;
 }
 
 #con-bemVindo, #con-cardSaldo{
@@ -67,3 +72,4 @@ body{
     
     background-color: gray;
 }
+

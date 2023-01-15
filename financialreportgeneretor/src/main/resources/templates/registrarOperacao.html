@@ -16,7 +16,7 @@
     <form th:action="@{/saveOperacao}" method="post" th:object="${novoOperacao}">
         <div class="mb-3">
             <label for="txtValor" class="form-label">Valor</label>
-            <input type="number" id="inpValor" required th:field="*{valor}" class="form-control" placeholder="R$">
+            <input type="number" id="inpValor" required min="0" th:field="*{valor}" class="form-control" placeholder="R$">
         </div>
 
         <div class="mb-3">
