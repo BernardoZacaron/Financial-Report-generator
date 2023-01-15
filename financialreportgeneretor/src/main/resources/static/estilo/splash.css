@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Poppins:wght@100&family=Quicksand:wght@300&display=swap');
+body{
+    background-color: #292b2c;
+}
+
+#con-bemVindo{
+    margin-bottom: 2%;
+}
+#bemVindo{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 4em;
+    color: whitesmoke;
+}
+
+#card-saldo{
+    width: fit-content;
+    border: 1px solid black;
+    border-radius: 4%;
+    padding: 3%;
+    
+    background-image: linear-gradient(to bottom right, lightgreen, #f55347);
+}
+#card-saldo h3,h2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#con-bemVindo, #con-cardSaldo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#div-registrar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    grid-area: registrar;
+}
+#div-expandir{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    grid-area: expand;
+}
+#div-expandir p{
+    font-size: 2.5em;
+}
+#div-expandir a{
+    color: white;
+}
+#con-registrar{
+    display: grid;
+    grid-template-areas:
+    'expand . registrar';
+    margin: 5% 0 3%;   
+}

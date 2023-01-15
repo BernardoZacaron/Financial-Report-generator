@@ -11,8 +11,8 @@
 	<groupId>com.projects.java</groupId>
 	<artifactId>financialreportgeneretor</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>FinancialReportGeneretor</name>
-	<description>Keep your cash in check</description>
+	<name>Cash in check</name>
+	<description>Tool for keeping track of the inputs and outputs of your wallet</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
